@@ -14,6 +14,19 @@ main{
     padding: 10px;
     text-align: center;
 }
-header {
-    
+
+input  {
+    padding: 5px;
+    width: 40px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.123);
+}
+
+.numero0 {
+    width: 82px;
+    margin-left: -4px;
+}
+
+section {
+    padding: 10px;
 }
