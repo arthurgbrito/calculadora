@@ -1,16 +1,19 @@
-let numeros = [
-    um = document.querySelector("input#1"),
-    dois =document.querySelector("input#2"),
-    tres = document.querySelector("input#3"),
-    quatro = document.querySelector("input#4"),
-    cinco = document.querySelector("input#5"),
-    seis = document.querySelector("input#6"),
-    sete = document.querySelector("input#7"),
-    oito = document.querySelector("input#8"),
-    nove = document.querySelector("input#9"),
-    zero = document.querySelector("input.numero0")
-]
+const um = document.querySelector("input[value='1']");
+const dois = document.querySelector("input[name='2']");
+const tres = document.querySelector("input[name='3']");
+const quatro = document.querySelector("input[name='4']");
+const cinco = document.querySelector("input[name='5']");
+const seis = document.querySelector("input[name='6']");
+const sete = document.querySelector("input[name='7']");
+const oito = document.querySelector("input[name='8']");
+const nove = document.querySelector("input[name='9']");
+const zero = document.querySelector("input.numero0");
 
-function apertou(){
-    switch()
+const visor = document.querySelector(".visor");
+
+
+function apertou(numero) {
+    visor.innerText = numero;
 }
+
+um.addEventListener("click", apertou("1"));
