@@ -11,6 +11,3 @@ let numeros = [
     zero = document.querySelector("input.numero0")
 ]
 
-function apertou(){
-    switch()
-}
