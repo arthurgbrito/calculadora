@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="shortcut icon" href="calculadora/imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Calculadora</h1>
+        </header>
+        <section>
+            <div class="calculadora">
+                <input type="text" class="visor" readonly>
+            </div>
+            <div>
+                <input type="button" value="C" class="apagador" onclick="apertou()">
+                <input type="button" value="x²" class="operador" onclick="apertou()">
+                <input type="button" value="⌫" class="backspace" onclick="apertou()">
+                <input type="button" value="/" class="operador" onclick="apertou()">
+                <br>
+                <input type="button" value="9" class="numero" id="9" onclick="apertou()">
+                <input type="button" value="8" class="numero" id="8" onclick="apertou()">
+                <input type="button" value="7" class="numero" id="7" onclick="apertou()">
+                <input type="button" value="x" class="operador" onclick="apertou()">
+                <br>
+                <input type="button" value="6" class="numero" id="6" onclick="apertou()">
+                <input type="button" value="5" class="numero" id="5" onclick="apertou()">
+                <input type="button" value="4" class="numero" id="4" onclick="apertou()">
+                <input type="button" value="-" class="operador" onclick="apertou()">
+                <br>
+                <input type="button" value="3" class="numero" id="3" onclick="apertou()">
+                <input type="button" value="2" class="numero" id="2" onclick="apertou()">
+                <input type="button" value="1" class="numero" id="1" onclick="apertou()">
+                <input type="button" value="+" class="operador" onclick="apertou()">
+                <br>
+                <input type="button" value="0" class="numero0" onclick="apertou()">
+                <input type="button" value="." class="virgula" onclick="apertou()">
+                <input type="button" value="=" class="igual" onclick="apertou()">
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
