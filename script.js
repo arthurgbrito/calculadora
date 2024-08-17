@@ -1,26 +1,38 @@
 let visor = document.querySelector('.visor');
 let exp = ''
+let ans = ''
 let controle = 0
 
 function adicionaValor(valor){
   
-  if (exp !== '' && controle == 1){
-    visor.value = ''
-    controle = 0
+  if (controle === 1){
+    if (['x','-','+','÷'].includes(valor)){
+      visor.value += valor
+      exp += valor
+    } else {
+      visor.value = ''
+      exp = ''
+      controle = 0
+    }
   } 
 
   let ultimo = visor.value.charAt(visor.value.length - 1)
-  if (valor == 'x' || valor == '-' || valor == '+' || valor == '÷'){
-    if ( ultimo == ''){
+  
+  if (['x','-','+','÷'].includes(valor) && controle == 0){
+    if ( ultimo == '' || ['x','-','+','÷'].includes(ultimo)){
       alert('Não é possível usar essa opção! Digite algo válido!')
     } else {
       visor.value += valor
       exp += valor  
     }
-  } else {
+  } else if (valor === 'ANS'){
+    visor.value += valor
+    exp += ans
+  } else if (!isNaN(valor)){
     visor.value += valor
     exp += valor 
   }
+  controle = 0
 }
 
 function apagaVisor(){
@@ -45,6 +57,9 @@ function calcula() {
     }
 
     visor.value = resultado
+    ans = resultado
+    exp = resultado
+
     controle = 1
 
   } catch {
@@ -82,8 +97,15 @@ document.addEventListener('keydown', function(evento) {
       botao = document.querySelector('input.backspace')
       break;
     case '.': 
+    case ',':
       botao = document.querySelector('input.virgula')
-    break;
+      break;
+    case 'a':
+      botao = document.querySelector('input.answer')
+      break;
+    case 'Escape':
+      botao = document.querySelector('input.apagador')
+      break;
   }
 
   if (botao){
