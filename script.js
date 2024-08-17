@@ -1,7 +1,14 @@
 let visor = document.querySelector('.visor');
 let exp = ''
+let controle = 0
 
 function adicionaValor(valor){
+  
+  if (exp !== '' && controle == 1){
+    visor.value = ''
+    controle = 0
+  } 
+
   let ultimo = visor.value.charAt(visor.value.length - 1)
   if (valor == 'x' || valor == '-' || valor == '+' || valor == '÷'){
     if ( ultimo == ''){
@@ -26,7 +33,7 @@ function del(){
   exp = exp.slice(0, -1)
 }
 
-function expressao() {
+function calcula() {
   try {
 
     exp = exp.replace(/x/g, '*').replace(/÷/g, '/')
@@ -38,7 +45,8 @@ function expressao() {
     }
 
     visor.value = resultado
-      
+    controle = 1
+
   } catch {
       visor.value = 'ERRO';
   }
@@ -59,10 +67,14 @@ document.addEventListener('keydown', function(evento) {
   switch(key){
     case '+':
     case '-':
-    case '/':
-    case '*':
-      botao = document.querySelector(`input[value="${key}"]`)
+       botao = document.querySelector(`input[value="${key}"]`)
       break;
+    case '/':
+      botao = document.querySelector('input[value="÷"]')
+      break;
+    case '*':
+     botao = document.querySelector('input[value="x"]')
+     break;
     case 'Enter':
       botao = document.querySelector('input.igual')
       break;
