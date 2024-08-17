@@ -19,27 +19,27 @@
             <div>
                 <input type="button" value="C" class="apagador" onclick="apagaVisor()">
                 <input type="button" value="x²" class="operador">
-                <input type="button" value="⌫" class="backspace">
-                <input type="button" value="/" class="operador">
+                <input type="button" value="⌫" class="backspace" onclick="del()">
+                <input type="button" value="/" class="operador" onclick="adicionaValor('÷')">
                 <br>
                 <input type="button" value="9" class="numero" onclick="adicionaValor('9')">
                 <input type="button" value="8" class="numero" onclick="adicionaValor('8')">
                 <input type="button" value="7" class="numero" onclick="adicionaValor('7')">
-                <input type="button" value="x" class="operador">
+                <input type="button" value="x" class="operador" onclick="adicionaValor('x')">
                 <br>
                 <input type="button" value="6" class="numero" onclick="adicionaValor('6')">
                 <input type="button" value="5" class="numero" onclick="adicionaValor('5')">
                 <input type="button" value="4" class="numero" onclick="adicionaValor('4')">
-                <input type="button" value="-" class="operador">
+                <input type="button" value="-" class="operador" onclick="adicionaValor('-')">
                 <br>
                 <input type="button" value="3" class="numero" onclick="adicionaValor('3')">
                 <input type="button" value="2" class="numero" onclick="adicionaValor('2')">
                 <input type="button" value="1" class="numero" onclick="adicionaValor('1')">
-                <input type="button" value="+" class="operador">
+                <input type="button" value="+" class="operador" onclick="adicionaValor('+')">
                 <br>
                 <input type="button" value="0" class="numero0" onclick="adicionaValor('0')">
                 <input type="button" value="." class="virgula">
-                <input type="button" value="=" class="igual">
+                <input type="button" value="=" class="igual" onclick="expressao()">
             </div>
         </section>
     </main>
