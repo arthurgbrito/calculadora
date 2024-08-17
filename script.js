@@ -28,10 +28,10 @@ function adicionaValor(valor){
   } else if (valor === 'ANS'){
     visor.value += valor
     exp += ans
-  } else if (!isNaN(valor)){
+  } else if (!isNaN(valor) || valor == '.'){
     visor.value += valor
     exp += valor 
-  }
+  } 
   controle = 0
 }
 
@@ -41,8 +41,12 @@ function apagaVisor(){
 }
 
 function del(){
-  visor.value = visor.value.slice(0, -1)
+  if (controle == 1){
+    apagaVisor()
+  } else {
+    visor.value = visor.value.slice(0, -1)
   exp = exp.slice(0, -1)
+  }
 }
 
 function calcula() {
