@@ -20,7 +20,12 @@ function adicionaValor(valor){
   
   if (['x','-','+','÷'].includes(valor) && controle == 0){
     if ( ultimo == '' || ['x','-','+','÷'].includes(ultimo)){
-      alert('Não é possível usar essa opção! Digite algo válido!')
+      if (valor == '-' && ultimo == ['x','-','+','÷'].includes(ultimo)){
+        visor.value += valor
+        exp += valor
+      } else {
+        alert('Não é possível usar essa opção! Digite algo válido!')
+      }
     } else {
       visor.value += valor
       exp += valor  
@@ -53,18 +58,24 @@ function calcula() {
   try {
 
     exp = exp.replace(/x/g, '*').replace(/÷/g, '/')
-    
-    let resultado = eval(exp)
 
-    if (!isNaN(resultado) && resultado % 1 !== 0){
-      resultado = parseFloat(resultado.toFixed(11))
+    if (exp == "0/0" ){
+      visor.value = "ERROR"
+    } else {
+      let resultado = eval(exp)
+
+      if (!isNaN(resultado) && resultado % 1 !== 0){
+        resultado = parseFloat(resultado.toFixed(11))
+      }
+
+      visor.value = resultado
+      ans = resultado
+      exp = resultado
+
+      controle = 1
     }
-
-    visor.value = resultado
-    ans = resultado
-    exp = resultado
-
-    controle = 1
+    
+    
 
   } catch {
       visor.value = 'ERRO';
